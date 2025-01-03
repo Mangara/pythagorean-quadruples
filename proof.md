@@ -8,5 +8,18 @@ There are infinitely many Pythagorean quadruples, so what does it mean to enumer
 
 ## Transformation
 
+The first thing we need for our tree is an operation that transforms one Pythagorean quadruple into another. There are sveral choices that work, but we'll be using the following:
 
+```math
+S(a, b, c, d) = (2a + 2b, 2a - 2b, 3c + d, c + 3d)
+```
 
+This is again a Pythagorean quadruple, as
+
+```math
+\begin{align*} 
+  (2a + 2b)^2 + (2a - 2b)^2 + (3c + d)^2 &= (c + 3d)^2\\
+  (4a^2 + 8ab + 4b^2) + (4a^2 - 8ab + 4b^2) + (9c^2 + 6cd + d^2) &= (c^2 + 6cd + 9d^2)\\
+  8a^2 + 8b^2 + 8c^2 &= 8 d^2
+\end{align*}
+```
