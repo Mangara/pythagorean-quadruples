@@ -22,7 +22,7 @@ While Pythagorean quadruples are typically given with positive integers, it will
 
 To be a little more precise, we define the <i>class</i> $[(a, b, c, d)]$ of a Pythagorean quadruple $(a, b, c, d)$ to be all those Pythagorean quadruples that can be derived from it by: (1) switching the sign of any of the four terms, (2) exchanging any of the first three terms, and (3) multiplying or dividing each term by the same number. So both $(-8, 4, -1, 9)$ and $(32, 4, -16, 36)$ are members of the class $[(4, 8, 1, 9)]$.
 
-Our enumeration algorithm will enumerate one <i>representative</i> Pythagorean quadruple from each class. If the others are needed, they can be generated easily from these representatives by applying the three operations.
+Our enumeration algorithm will generate one <i>representative</i> Pythagorean quadruple from each class. If the others are needed, they can be generated easily from these representatives by applying the three operations.
 
 ## Transformation
 
@@ -44,6 +44,7 @@ This is again a Pythagorean quadruple, as
 
 ## Tree
 
-We now have all the pieces we need to define our tree. Let $T$ be the graph whose vertices are the equivalence classes of Pythagorean quadruples, and with an edge between two classes $C_1$ and $C_2$ if and only if there exists a Pythagorean quadruple $A \in C_1$ such that $S(A) \in C_2$.
+We now have all the pieces we need to define our tree. Let $T$ be the graph whose vertices are the equivalence classes of Pythagorean quadruples, with an edge between two classes $C_1$ and $C_2$ if and only if there exists a Pythagorean quadruple $A \in C_1$ such that $S(A) \in C_2$.
 
-It is clear that $T$ is a graph that contains all (classes of) Pythagorean quadruples, but it is not immediately obvious that it is a tree. A tree is a connected, acyclic, undirected graph.
+It is clear that $T$ is a graph that contains all (classes of) Pythagorean quadruples, but it is not immediately obvious that it is a tree. A tree is an undirected graph with two special properties: it is <i>connected</i> and <i>acyclic</i>. This is useful for our enumeration algorithm, as it guarantees that we can find any Pythagorean quadruple from any starting point, and we don't need to keep track of which quadruples we've visited already.
+
