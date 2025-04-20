@@ -48,3 +48,12 @@ We now have all the pieces we need to define our tree. Let $T$ be the graph whos
 
 It is clear that $T$ is a graph that contains all (classes of) Pythagorean quadruples, but it is not immediately obvious that it is a tree. A tree is an undirected graph with two special properties: it is <i>connected</i> and <i>acyclic</i>. This is useful for our enumeration algorithm, as it guarantees that we can find any Pythagorean quadruple from any starting point, and we don't need to keep track of which quadruples we've visited already.
 
+### Connected
+
+
+
+Given a primitive Pythagorean quadruple $A = (a, b, c, d)$ with $d > 1$, $h(S(A)) < h(A)$ if and only if $c + d = 2 \pmod 4$.
+
+Proof.
+
+=> Recall that $S(a, b, c, d) = (2a + 2b, 2a - 2b, 3c + d, c + 3d)$ and that $d$ is always odd in a primitive quadruple. If $c + d = 2 \pmod 4$, $c$ must also be odd. Therefore $a$ and $b$ are both even, which means both $2a + 2b$ and $2a - 2b$ are divisible by 4.
